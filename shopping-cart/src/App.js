@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import ProductPage from "./pages/ProductPage";
-import { CartProvider } from "context/CartContext";
+
 
 function App() {
     return (
-        <CartProvider>
             <Router>
                 <Routes>
                     <Route
@@ -24,7 +23,6 @@ function App() {
                     />
                 </Routes>
             </Router>
-        </CartProvider>
     );
 }
 

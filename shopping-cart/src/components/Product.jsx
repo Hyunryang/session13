@@ -3,11 +3,12 @@ import { Button } from "./Button";
 import { useNavigate } from "react-router-dom";
 import { PAGE } from "constants/common";
 import { Box } from "styles/StyleComponent";
-import { CartContext } from "context/CartContext";
+import { useCartStore } from "store/CartStore";
 import React, { useContext } from "react";
+
 export const Product = ({ product, ...rest }) => {
     const navigate = useNavigate();
-    const { cart, setCart } = useContext(CartContext);
+    const { cart, setCart } = useCartStore();
     const handleCart = (product) => {
         if (cart.find((item) => item.id === product.id)) {
             alert("이미 장바구니에 추가된 상품입니다.");
